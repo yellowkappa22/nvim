@@ -1,0 +1,10 @@
+vim.keymap.set('n', '<leader>pr', ':w | !python3 %<CR>')
+vim.keymap.set('n', '<leader>mr', '<cmd>MoltenEvaluateOperator<cr>')
+vim.keymap.set('n', '<leader>cfm', function()
+   require('conform').format({ async = true })
+end, { desc = 'format file' })
+vim.keymap.set('n', '<leader>mview', function()
+   vim.cmd('MoltenShowOutput')
+   vim.cmd('noautocmd MoltenEnterOutput')
+end, {desc = 'review output'})
+
